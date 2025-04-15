@@ -247,12 +247,12 @@ h1 {
   line-height: 1.1;
 }
 
-h2 {margin: 1em 0.5em 0 0.5em;} /* 1em 0 0 0 */
+h2 {margin: 3rem 1rem 0 1rem;} /* 1em 0.5em 0 0.5em */
 
-h3 {margin: 1.5em 0.5em 0.2em 0.5em;}
+h3 {margin: 3rem 1rem 0.2rem 1rem;}
 
 h2 + h3 {
-  margin: 0.7em 0.5em 0.2em 0.5em;
+  margin: 0 0.5em 0.2em 0.5em;
 }
 
 h4 {margin: 0.5em .5em 0 0.8em;}
@@ -261,9 +261,101 @@ h5 {margin: 2em 0.5em 2em 0.5em;}
 
 h6 {margin: 2em 0.5em 2em 0.5em;}
 
-p {margin: 0 0.5em 1em 1.5em;}
+p {margin: 0 1rem 1.5rem 1rem;} /* 0 0.5em 1em 1em */
 
 ul {margin: 0.5em 0 0 0;}
+
+ul {
+  margin: 0.5rem 0 1rem 0;  /* note the 2rem at left */
+  list-style-type: disc;
+}
+
+ol {
+  margin: 0.5rem 0 1rem 0;
+  list-style-type: decimal;
+}
+
+ul {
+  list-style-image: url('img/icon.png');
+}
+
+h2:has(+ p) {
+  margin: 0 0 0.347em;
+}   
+
+h2:has(+ img) {
+   margin: 0 0 0.667em; /* pictures look better with more space above */
+} 
+
+h2 + ol {
+  margin: 2rem 0 0 2rem 0;  /* margins for the ol */
+  }
+
+h2 + table {
+  margin: 0.5rem 0 0 2rem 0;   /* margins for the table */
+} 
+
+h2 + h3 {
+  margin: 0.25rem 0 0 2rem 0;  /* margins for the h3 */
+}       
+
+h3+p {color:red} /* sibling after*/
+
+h3:has(+p) {color: blue} /* preceding sibling */
+
+main p:first-child {color:orange;}
+
+address {margin: 0.5rem 0 1rem 1.5rem;}
+
+/* TYPESCALE for MOBILE 
+    https://spencermortensen.com/articles/typographic-scale/  */
+
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2.1459em; }
+h3 { font-size: 1.842em; }
+h4 { font-size: 1.5811em; }
+h5 { font-size: 1.3572em; }
+h6 { font-size: 1.165em; }
+p { font-size: 1em; }
+small { font-size: .8584em; }
+
+legend {font-size: 1.842em; }  /* h3 */
+label {font-size: 1.5811em;}  /* h4 */
+figcaption { font-size: .8584em;}  /* small */
+
+
+
+@media screen and (min-width: 60rem) {
+
+/* TYPESCALE for DESKTOP: ADD CONTRAST   */
+
+h1 { font-size: 3.558em; }
+h2 { font-size: 2.8796em; }
+h3 { font-size: 2.3306em; }
+h4 { font-size: 1.8863em; }
+h5 { font-size: 1.5266em; }
+h6 { font-size: 1.2356em; }
+small { font-size: .8093em; }
+
+legend {font-size: 2.3306em; } /* h3 */
+label {font-size: 1.8863em;}   /* h4 */
+figcaption { font-size: .8093em;}  /* small */
+
+} /* always add a comment next to the closing media query bracket 
+     so you don't delete it accidentally */
+
+
+figcaption {
+  font-size: .8584em;
+  text-align: right;
+  font-style: italic;
+  margin-top: 0;
+  
+  position: relative; /* when margins are zero, you can still tweak */
+  top: -0.3rem;
+}
+
 
 label {}
 
